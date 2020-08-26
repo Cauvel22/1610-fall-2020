@@ -1,1 +1,2 @@
-sunny 104 degrees
+sunny 104 degrees Aug 25
+sunny 71 degrees Aug 26
