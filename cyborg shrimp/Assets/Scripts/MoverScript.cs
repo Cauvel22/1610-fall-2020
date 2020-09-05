@@ -1,22 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class MoverScript : MonoBehaviour
 {
-    public float speed = 3f;
-    public float x, y, z;
-    // Start is called before the first frame update
-    void Start()
+    
+    public float speed = 3f, x, y, z;
+    public float health = 1;
+    public int point = 10;
+
+
+    private void Start()
     {
-        Debug.Log("weeeee");
+        Debug.Log("My name's Lil'Billy!")
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        x = speed*Input.GetAxis("Horizontal") * Time.deltaTime;
-        y = speed*Input.GetAxis("Vertical") * Time.deltaTime;
+        x = speed *Time.deltaTime * Input.GetAxis("Vertical");
+        y = speed *Time.deltaTime * Input.GetAxis("Horizontal");
         transform.Translate(x,y,z);
+    }
+
+    
+    public void Up()
+    {
+        transform.Translate(0,speed,0);
+    }
+    public void Down()
+    {
+        transform.Translate(0, -speed, 0);
     }
 }
