@@ -22,7 +22,6 @@ public class MoverScript : MonoBehaviour
         y = speed * Time.deltaTime * Input.GetAxis("Vertical");
         transform.Translate(x,y,z);
     }
-
     
     public void Up()
     {

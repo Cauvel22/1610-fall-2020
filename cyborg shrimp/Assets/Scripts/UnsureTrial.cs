@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class UnsureTrial : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float speed = 4f;
+    public float x, y, z;
     void Start()
     {
         Debug.Log("I think this'll all work");
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        x = speed * Input.GetAxis("Horizontal")*Time.deltaTime;
+        y = speed * Input.GetAxis("Vertical")*Time.deltaTime;
+        transform.Translate(x,y,z);
     }
 }
