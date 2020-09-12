@@ -8,7 +8,8 @@ public class JumpScript : MonoBehaviour
 {
    public float speed = 3f,x,y,z;
    public float health = 1;
-   public float points = 0;
+   public float score = 0;
+   public int ammo = 0;
 
    public void Update()
    {
