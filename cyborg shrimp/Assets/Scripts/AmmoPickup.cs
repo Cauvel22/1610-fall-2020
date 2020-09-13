@@ -8,6 +8,5 @@ public class AmmoPickup : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         ammo++;
-        print(ammo);
     }
 }
