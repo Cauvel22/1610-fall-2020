@@ -16,6 +16,7 @@ public class DestroyOutOfBounds : MonoBehaviour
             Destroy(gameObject);
         }else if (transform.position.z< lowerBoundary)
         {
+            Debug.Log("Git Gud Scrub!");
             Destroy(gameObject);
         }
         {
