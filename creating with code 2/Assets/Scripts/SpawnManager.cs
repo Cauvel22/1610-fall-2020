@@ -22,7 +22,7 @@ public class SpawnManager : MonoBehaviour
     void SpawnRandomAnimal()
     //had to use a different random method, one taught in CWC didn't work.
     {
-        Instantiate(animalPrefabs[number.Next(0,37) % 3], new Vector3((float)number.Next(-20, 
-            20),0,25), animalPrefabs[animalIndex].transform.rotation);
+        Instantiate(animalPrefabs[number.Next(0,animalPrefabs.Length)], new Vector3(
+        (float)number.Next(-20, 20),0,25), animalPrefabs[animalIndex].transform.rotation);
     }
 }
