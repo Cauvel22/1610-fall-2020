@@ -16,8 +16,8 @@ public class SpawnManager : MonoBehaviour
 
     public void Update()
     {
+    
 
-        
     }
     void SpawnRandomAnimal()
     //had to use a different random method, one taught in CWC didn't work.
