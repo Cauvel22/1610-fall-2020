@@ -1,22 +1,31 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class MoverScript : MonoBehaviour
+﻿using UnityEngine;
+[RequireComponent(typeof(CharacterController))]
+public class CharacterMover : MonoBehaviour
 {
-    public float moveSpeed;
+    private CharacterController controller;
+    public float moveSpeed = 5f, gravity = -9.81f, jumpForce = 10f;
+    
     private Vector3 moveDirection;
-
-    public void Update()
+    private float yDirection;
+    private void Start()
     {
-        if (Input.GetButton("Jump"))
+        controller = GetComponent<CharacterController>();
+    }
+    private void Update()
+    {
+        var moveSpeedInput = moveSpeed * Input.GetAxis("Horizontal");
+        moveDirection.Set(moveSpeedInput,yDirection,0);
+        yDirection += gravity * Time.deltaTime;
+        if (controller.isGrounded && moveDirection.y < 0)
         {
-            
+            yDirection = -1f;
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            yDirection = jumpForce;
         }
         
-        
-        moveDirection.x = moveSpeed * Time.deltaTime;
-        transform.Translate(moveDirection);
+        var movement = moveDirection * Time.deltaTime;
+        controller.Move(movement);
     }
 }

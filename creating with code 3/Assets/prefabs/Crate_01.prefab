@@ -11,10 +11,12 @@ GameObject:
   - component: {fileID: 456524}
   - component: {fileID: 3373954}
   - component: {fileID: 2321600}
-  - component: {fileID: 114666804175141428}
+  - component: {fileID: 54362577667325844}
+  - component: {fileID: 65483470237249444}
+  - component: {fileID: 114655919382935334}
   m_Layer: 0
   m_Name: Crate_01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +80,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &114666804175141428
+--- !u!54 &54362577667325844
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134104}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65483470237249444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.554324, y: 1.5543231, z: 1.5543228}
+  m_Center: {x: 0, y: 0.77716154, z: 0}
+--- !u!114 &114655919382935334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,3 +121,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5aece47899c11c48bc16af4325b7576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 30
+  playerControllerScript: {fileID: 0}
