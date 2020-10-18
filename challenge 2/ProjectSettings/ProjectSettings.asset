@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 18
-  productGUID: 00000000000000000000000000000000
+  productGUID: 912150437c179244eb46716b671d062a
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -630,7 +630,7 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   cloudProjectId: d78a6ba8-85d1-4e6c-be80-f1bed4c4714d
   framebufferDepthMemorylessMode: 0
-  projectName: 
+  projectName: challenge 2
   organizationId: cauvel22
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
