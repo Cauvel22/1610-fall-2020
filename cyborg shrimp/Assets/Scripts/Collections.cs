@@ -13,7 +13,7 @@ public class Collections : MonoBehaviour
 
     private void Start()
     {
-        foreach (var item in )
+        foreach (var item in GameObjectlist)
         {
             
         }
