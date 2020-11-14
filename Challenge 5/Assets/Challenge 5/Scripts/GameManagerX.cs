@@ -9,6 +9,9 @@ public class GameManagerX : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI timerText;
+    public bool timerIsRunning;
+    public float timeRemaining = 60;
     public GameObject titleScreen;
     public Button restartButton; 
 
@@ -31,6 +34,7 @@ public class GameManagerX : MonoBehaviour
         score = 0;
         UpdateScore(0);
         titleScreen.gameObject.SetActive(false);
+        timerIsRunning = true;
     }
 
     // While game is active spawn a random target
@@ -73,12 +77,30 @@ public class GameManagerX : MonoBehaviour
         scoreText.text = "score" + score;
     }
 
+    void Update()
+    {
+        if (timerIsRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                timerText.text = "Time:" + timeRemaining;
+            }
+            else
+            {
+                timeRemaining = 0;
+                GameOver();
+            }
+        }
+    }
+
     // Stop game, bring up game over text and restart button
     public void GameOver()
     {
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
         isGameActive = false;
+        timerIsRunning = false;
     }
 
     // Restart game by reloading the scene
