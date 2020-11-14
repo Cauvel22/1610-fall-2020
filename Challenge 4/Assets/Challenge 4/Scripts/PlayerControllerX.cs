@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 
 public class PlayerControllerX : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerControllerX : MonoBehaviour
 
     private float normalStrength = 10; // how hard to hit enemy without powerup
     private float powerupStrength = 25; // how hard to hit enemy with powerup
+    public ParticleSystem woosh;
     
     void Start()
     {
@@ -29,8 +31,16 @@ public class PlayerControllerX : MonoBehaviour
 
         // Set powerup indicator position to beneath player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.6f, 0);
+        woosh.transform.position = transform.position + new Vector3(0, -0.6f, 0);
+        if (Input.GetButtonDown("Jump"))
+        {
+            playerRb.AddForce(focalPoint.transform.forward 
+            *verticalInput*8,ForceMode.Impulse);
+            woosh.Play();
+        }
 
     }
+    
 
     // If Player collides with powerup, activate powerup
     private void OnTriggerEnter(Collider other)

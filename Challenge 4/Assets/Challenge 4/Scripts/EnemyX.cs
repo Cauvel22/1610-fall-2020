@@ -6,19 +6,20 @@ public class EnemyX : MonoBehaviour
 {
     public float speed;
     private Rigidbody enemyRb;
-    public GameObject playerGoal;
+    private GameObject playerGoal;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
+        playerGoal = GameObject.Find("Player Goal");
     }
 
     // Update is called once per frame
     void Update()
     {
         // Set enemy direction towards player goal and move there
-        Vector3 lookDirection = (transform.position - playerGoal.transform.position).normalized;
+        Vector3 lookDirection = (playerGoal.transform.position-transform.position).normalized;
         enemyRb.AddForce(lookDirection * speed * Time.deltaTime);
 
     }

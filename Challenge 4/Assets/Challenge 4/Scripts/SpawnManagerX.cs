@@ -13,8 +13,6 @@ public class SpawnManagerX : MonoBehaviour
 
     public int enemyCount;
     public int waveCount = 1;
-
-
     public GameObject player; 
 
     // Update is called once per frame
