@@ -1,26 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
 
-public class DestroyOutOfBounds : MonoBehaviour
+public class DestroyOutOfBounds : ScriptableObject
 
 {
-    private float topBoundary = 35f;
-    private float lowerBoundary = -10;
-
-    private void Update()
-    {
-        if (transform.position.z > topBoundary)
-        {
-            Destroy(gameObject);
-        }else if (transform.position.z< lowerBoundary)
-        {
-            Debug.Log("Git Gud Scrub!");
-            Destroy(gameObject);
-        }
-        {
-            
-        }
-    }
+    private bool collision;
+    private 
 }

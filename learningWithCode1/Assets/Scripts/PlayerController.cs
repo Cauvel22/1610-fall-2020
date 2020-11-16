@@ -1,29 +1,22 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     //private variables
-    private float speed = 5.0f;
-    private float turnSpeed;
-    private float horizontalInput;
-    private float forwardInput;
-
-    private void Start()
-    {
-        
-    }
+    public float speed = 5.0f;
+    public float turnSpeed;
+    private float _horizontalInput;
+    private float _forwardInput;
 
     void Update()
     {
         //player movement
-        horizontalInput = Input.GetAxis("Horizontal");
-        forwardInput = Input.GetAxis("Vertical");
+        _horizontalInput = Input.GetAxis("Horizontal");
+        _forwardInput = Input.GetAxis("Vertical");
         //forward
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * _forwardInput);
         //player turn
-        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * _horizontalInput);
     }
 }

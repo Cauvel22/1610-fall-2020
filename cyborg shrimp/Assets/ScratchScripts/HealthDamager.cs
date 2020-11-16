@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class HealthDamager : ScriptableObject
 {
+    public float value;
     
-    
-    
-    
-    
+   
+
+
+
+
 }
